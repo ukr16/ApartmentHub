@@ -2,80 +2,74 @@ package org.example.entity;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "Apartment")
+import java.util.List;
+
 public class Apartment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String unitNumber;
-    private int floor;
-    @Enumerated(EnumType.STRING)
-    private ApartmentStatus status;
-    @ManyToOne
-    private Building building;
-    public enum ApartmentStatus {
-        VACANT, OCCUPIED
-    }
+    private int id;
+    private String apartmentName;
+    private String address;
+    private String contactNumber;
+    private String email;
+    @OneToMany
+    private List<Flats> flats;
+    @OneToMany
+    private List<Amenity> amenities;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUnitNumber() {
-        return unitNumber;
+    public String getApartmentName() {
+        return apartmentName;
     }
 
-    public void setUnitNumber(String unitNumber) {
-        this.unitNumber = unitNumber;
+    public void setApartmentName(String apartmentName) {
+        this.apartmentName = apartmentName;
     }
 
-    public int getFloor() {
-        return floor;
+    public String getAddress() {
+        return address;
     }
 
-    public void setFloor(int floor) {
-        this.floor = floor;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public ApartmentStatus getStatus() {
-        return status;
+    public String getContactNumber() {
+        return contactNumber;
     }
 
-    public void setStatus(ApartmentStatus status) {
-        this.status = status;
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
-    public Building getBuilding() {
-        return building;
+    public String getEmail() {
+        return email;
     }
 
-    public void setBuilding(Building building) {
-        this.building = building;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Apartment() {
+    public List<Flats> getFlats() {
+        return flats;
     }
 
-    public Apartment(String unitNumber, int floor, ApartmentStatus status, Building building) {
-        this.unitNumber = unitNumber;
-        this.floor = floor;
-        this.status = status;
-        this.building = building;
+    public void setFlats(List<Flats> flats) {
+        this.flats = flats;
     }
 
-    @Override
-    public String toString() {
-        return "Apartment{" +
-                "id=" + id +
-                ", unitNumber='" + unitNumber + '\'' +
-                ", floor=" + floor +
-                ", status=" + status +
-                ", building=" + building +
-                '}';
+    public List<Amenity> getAmenities() {
+        return amenities;
+    }
+
+    public void setAmenities(List<Amenity> amenities) {
+        this.amenities = amenities;
     }
 }

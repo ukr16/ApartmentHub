@@ -16,6 +16,6 @@
 
         <mapping class="org.example.entity.Society" />
         <mapping class="org.example.entity.Building" />
-        <mapping class = "org.example.entity.Apartment" />
+        <mapping class = "org.example.entity.Flats" />
     </session-factory>
 </hibernate-configuration>
