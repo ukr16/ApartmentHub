@@ -14,8 +14,15 @@
         <property name="hibernate.highlight_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="org.example.entity.Society" />
-        <mapping class="org.example.entity.Building" />
-        <mapping class = "org.example.entity.Flats" />
+        <mapping class="org.example.entity.Amenity" />
+        <mapping class="org.example.entity.Announcement" />
+        <mapping class="org.example.entity.Apartment" />
+        <mapping class="org.example.entity.Compliant" />
+        <mapping class="org.example.entity.Flats" />
+        <mapping class="org.example.entity.Maintenance" />
+        <mapping class="org.example.entity.Parking" />
+        <mapping class="org.example.entity.Resident" />
+        <mapping class="org.example.entity.Visitor" />
+
     </session-factory>
 </hibernate-configuration>
