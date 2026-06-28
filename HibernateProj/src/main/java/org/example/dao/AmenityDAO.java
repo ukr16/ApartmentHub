@@ -12,5 +12,5 @@ public interface AmenityDAO {
     Amenity findByName(String name);
     List<Amenity> findByAvailability(boolean isAvailable);
     List<Amenity> findAll();
-    List<Amenity> findByApartment(Long id);
+    List<Amenity> findByApartment(String apartmentName);
 }

@@ -2,6 +2,8 @@ package org.example.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalTime;
+
 @Entity
 @Table(name = "Amenity")
 public class Amenity {
@@ -11,8 +13,8 @@ public class Amenity {
     private String name;
     private String description;
     private boolean isAvailable;
-    private String openingTime;
-    private String closingTime;
+    private LocalTime openingTime;
+    private LocalTime closingTime;
     private int capacity;
     @ManyToOne
     private Apartment apartment;
@@ -20,7 +22,7 @@ public class Amenity {
     public Amenity() {
     }
 
-    public Amenity(String name, String description, boolean isAvailable, String openingTime, String closingTime, int capacity, Apartment apartment) {
+    public Amenity(String name, String description, boolean isAvailable, LocalTime openingTime, LocalTime closingTime, int capacity, Apartment apartment) {
         this.name = name;
         this.description = description;
         this.isAvailable = isAvailable;
@@ -62,19 +64,19 @@ public class Amenity {
         isAvailable = available;
     }
 
-    public String getOpeningTime() {
+    public LocalTime getOpeningTime() {
         return openingTime;
     }
 
-    public void setOpeningTime(String openingTime) {
+    public void setOpeningTime(LocalTime openingTime) {
         this.openingTime = openingTime;
     }
 
-    public String getClosingTime() {
+    public LocalTime getClosingTime() {
         return closingTime;
     }
 
-    public void setClosingTime(String closingTime) {
+    public void setClosingTime(LocalTime closingTime) {
         this.closingTime = closingTime;
     }
 
