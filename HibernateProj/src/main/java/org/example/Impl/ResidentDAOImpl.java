@@ -121,7 +121,33 @@ public class ResidentDAOImpl implements ResidentDAO {
         }
     }
 
-//    List<Resident> findFlatsByResident(Long id); //Id refers to resident id
-//    List<Resident> findParkingByResident(Long id); //Id refers to resident id
-//    List<Resident> findVisitorsByResident(Long id); //Id refers to resident id
+    @Override
+    public List<Resident> findFlatsByResident(String name){
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            return session.createQuery("from Resident where name = :name", Resident.class).setParameter("name", name).list();
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Resident> findParkingByResident(String flatNumber){
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            return session.createQuery("from Resident where flatNumber = :flatNumber", Resident.class).setParameter("flatNumber", flatNumber).list();
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Resident> findVisitorsByResident(String flatNumber){
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            return session.createQuery("from Resident where flatNumber = :flatNumber", Resident.class).setParameter("flatNumber", flatNumber).list();
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

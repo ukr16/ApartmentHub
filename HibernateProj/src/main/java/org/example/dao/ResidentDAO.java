@@ -16,7 +16,7 @@ public interface ResidentDAO {
     Resident findByEmail(String email);
     List<Resident> findByMoveInDate(LocalDate moveInDate);
     List<Resident> findByResidentType(Resident.ResidentType residentType);
-//    List<Resident> findFlatsByResident(Long id); //Id refers to resident id
-//    List<Resident> findParkingByResident(Long id); //Id refers to resident id
-//    List<Resident> findVisitorsByResident(Long id); //Id refers to resident id
+    List<Resident> findFlatsByResident(String name); //Id refers to resident id
+    List<Resident> findParkingByResident(String flatNumber); //Id refers to resident id
+    List<Resident> findVisitorsByResident(String flatNumber); //Id refers to resident id
 }

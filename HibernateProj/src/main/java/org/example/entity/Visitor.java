@@ -19,9 +19,9 @@ public class Visitor {
     private VehicleType vehicleType;
     private LocalDateTime entryTime;
     private LocalDateTime exitTime;
-    @ManyToMany
+    @ManyToOne
     private Flats flat;
-    @ManyToMany
+    @ManyToOne
     private Resident resident;
 
     public enum Purpose{

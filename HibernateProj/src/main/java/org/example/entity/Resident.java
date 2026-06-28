@@ -21,8 +21,7 @@ public class Resident {
     private List<Flats> flat;
     @ManyToMany
     private List<Parking> parking;
-    @ManyToMany
-    private List<Visitor> visitors;
+
 
     public enum ResidentType{
         OWNER, TENANT
@@ -103,13 +102,7 @@ public class Resident {
         this.parking = parking;
     }
 
-    public List<Visitor> getVisitors() {
-        return visitors;
-    }
 
-    public void setVisitors(List<Visitor> visitors) {
-        this.visitors = visitors;
-    }
 
     @Override
     public String toString() {

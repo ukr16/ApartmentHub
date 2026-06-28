@@ -15,7 +15,7 @@ public class Maintenance {
     private LocalDate paymentDate;
     @Enumerated(EnumType.STRING)
     private Status status;
-    @ManyToMany
+    @ManyToOne
     private Flats flat;
 
     public enum Status{

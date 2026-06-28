@@ -7,6 +7,6 @@ public class Main {
 
     static void main(String[] args) {
         HibernateUtil.getSessionFactory();
-        HibernateUtil.shutdown();
+//        HibernateUtil.shutdown();
     }
 }
