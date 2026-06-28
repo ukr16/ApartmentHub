@@ -2,6 +2,8 @@ package org.example.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "Announcement")
 public class Announcement {
@@ -10,14 +12,14 @@ public class Announcement {
     private Long id;
     private String title;
     private String message;
-    private String createdAt;
+    private LocalDateTime createdAt;
     @ManyToOne
     private Apartment apartment;
 
     public Announcement() {
     }
 
-    public Announcement(String title, String message, String createdAt, Apartment apartment) {
+    public Announcement(String title, String message, LocalDateTime createdAt, Apartment apartment) {
         this.title = title;
         this.message = message;
         this.createdAt = createdAt;
@@ -48,11 +50,11 @@ public class Announcement {
         this.message = message;
     }
 
-    public String getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 

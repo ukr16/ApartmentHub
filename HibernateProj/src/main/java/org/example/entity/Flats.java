@@ -2,6 +2,8 @@ package org.example.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Flats")
 public class Flats {
@@ -14,10 +16,10 @@ public class Flats {
     @Enumerated(EnumType.STRING)
     private FlatStatus flatStatus;
     private double rentAmount;
-    @ManyToMany
+    @ManyToOne
     private Apartment apartment;
     @ManyToMany
-    private Resident resident;
+    private List<Resident> residents;
     public enum FlatStatus{
         VACANT, OCCUPIED
     }
@@ -90,12 +92,12 @@ public class Flats {
         this.apartment = apartment;
     }
 
-    public Resident getResident() {
-        return resident;
+    public List<Resident> getResidents() {
+        return residents;
     }
 
-    public void setResident(Resident resident) {
-        this.resident = resident;
+    public void setResidents(List<Resident> residents) {
+        this.residents = residents;
     }
 
     @Override

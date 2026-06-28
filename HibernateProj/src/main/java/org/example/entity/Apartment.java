@@ -92,7 +92,7 @@ public class Apartment {
                 ", apartmentName='" + apartmentName + '\'' +
                 ", address='" + address + '\'' +
                 ", contactNumber='" + contactNumber + '\'' +
-                ", email='" + email +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

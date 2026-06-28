@@ -13,6 +13,7 @@ public class Maintenance {
     private double amount;
     private LocalDate dueDate;
     private LocalDate paymentDate;
+    @Enumerated(EnumType.STRING)
     private Status status;
     @ManyToMany
     private Flats flat;
