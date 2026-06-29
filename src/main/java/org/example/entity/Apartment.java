@@ -9,11 +9,11 @@ import java.util.List;
 public class Apartment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long apartmentId;
     private String apartmentName;
-    private String address;
-    private String contactNumber;
-    private String email;
+    private String apartmentAddress;
+    private String apartmentContactNumber;
+    private String apartmentEmail;
     @OneToMany
     private List<Flats> flats;
     @OneToMany
@@ -22,19 +22,19 @@ public class Apartment {
     public Apartment() {
     }
 
-    public Apartment(String apartmentName, String address, String contactNumber, String email) {
+    public Apartment(String apartmentName, String apartmentAddress, String apartmentContactNumber, String apartmentEmail) {
         this.apartmentName = apartmentName;
-        this.address = address;
-        this.contactNumber = contactNumber;
-        this.email = email;
+        this.apartmentAddress = apartmentAddress;
+        this.apartmentContactNumber = apartmentContactNumber;
+        this.apartmentEmail = apartmentEmail;
     }
 
-    public Long getId() {
-        return id;
+    public Long getApartmentId() {
+        return apartmentId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setApartmentId(Long apartmentId) {
+        this.apartmentId = apartmentId;
     }
 
     public String getApartmentName() {
@@ -45,28 +45,28 @@ public class Apartment {
         this.apartmentName = apartmentName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getApartmentAddress() {
+        return apartmentAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setApartmentAddress(String apartmentAddress) {
+        this.apartmentAddress = apartmentAddress;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getApartmentContactNumber() {
+        return apartmentContactNumber;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setApartmentContactNumber(String apartmentContactNumber) {
+        this.apartmentContactNumber = apartmentContactNumber;
     }
 
-    public String getEmail() {
-        return email;
+    public String getApartmentEmail() {
+        return apartmentEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setApartmentEmail(String apartmentEmail) {
+        this.apartmentEmail = apartmentEmail;
     }
 
     public List<Flats> getFlats() {
@@ -88,11 +88,13 @@ public class Apartment {
     @Override
     public String toString() {
         return "Apartment{" +
-                "id=" + id +
+                "apartmentId=" + apartmentId +
                 ", apartmentName='" + apartmentName + '\'' +
-                ", address='" + address + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
-                ", email='" + email + '\'' +
+                ", apartmentAddress='" + apartmentAddress + '\'' +
+                ", apartmentContactNumber='" + apartmentContactNumber + '\'' +
+                ", apartmentEmail='" + apartmentEmail + '\'' +
+                ", flats=" + flats +
+                ", amenities=" + amenities +
                 '}';
     }
 }

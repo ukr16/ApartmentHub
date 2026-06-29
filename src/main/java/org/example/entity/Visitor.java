@@ -10,96 +10,96 @@ public class Visitor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String phone;
+    private Long visitorId;
+    private String visitorName;
+    private String visitorPhone;
     @Enumerated(EnumType.STRING)
-    private Purpose purpose;
+    private VisitPurpose visitPurpose;
     @Enumerated(EnumType.STRING)
-    private VehicleType vehicleType;
-    private LocalDateTime entryTime;
-    private LocalDateTime exitTime;
+    private VisitorVehicleType visitorVehicleType;
+    private LocalDateTime visitorEntryTime;
+    private LocalDateTime visitorExitTime;
     @ManyToOne
     private Flats flat;
     @ManyToOne
     private Resident resident;
 
-    public enum Purpose{
+    public enum VisitPurpose{
         DELIVERY, GUEST, HOUSEHELP
     }
 
-    public enum VehicleType{
+    public enum VisitorVehicleType{
         TWO_WHEELER, THREE_WHEELER, FOUR_WHEELER
     }
 
     public Visitor() {
     }
 
-    public Visitor(String name, String phone, Purpose purpose, VehicleType vehicleType, LocalDateTime entryTime, LocalDateTime exitTime, Flats flat, Resident resident) {
-        this.name = name;
-        this.phone = phone;
-        this.purpose = purpose;
-        this.vehicleType = vehicleType;
-        this.entryTime = entryTime;
-        this.exitTime = exitTime;
+    public Visitor(String visitorName, String visitorPhone, VisitPurpose visitPurpose, VisitorVehicleType visitorVehicleType, LocalDateTime visitorEntryTime, LocalDateTime visitorExitTime, Flats flat, Resident resident) {
+        this.visitorName = visitorName;
+        this.visitorPhone = visitorPhone;
+        this.visitPurpose = visitPurpose;
+        this.visitorVehicleType = visitorVehicleType;
+        this.visitorEntryTime = visitorEntryTime;
+        this.visitorExitTime = visitorExitTime;
         this.flat = flat;
         this.resident = resident;
     }
 
-    public Long getId() {
-        return id;
+    public Long getVisitorId() {
+        return visitorId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setVisitorId(Long visitorId) {
+        this.visitorId = visitorId;
     }
 
-    public String getName() {
-        return name;
+    public String getVisitorName() {
+        return visitorName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setVisitorName(String visitorName) {
+        this.visitorName = visitorName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getVisitorPhone() {
+        return visitorPhone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setVisitorPhone(String visitorPhone) {
+        this.visitorPhone = visitorPhone;
     }
 
-    public Purpose getPurpose() {
-        return purpose;
+    public VisitPurpose getVisitPurpose() {
+        return visitPurpose;
     }
 
-    public void setPurpose(Purpose purpose) {
-        this.purpose = purpose;
+    public void setVisitPurpose(VisitPurpose visitPurpose) {
+        this.visitPurpose = visitPurpose;
     }
 
-    public VehicleType getVehicleType() {
-        return vehicleType;
+    public VisitorVehicleType getVisitorVehicleType() {
+        return visitorVehicleType;
     }
 
-    public void setVehicleType(VehicleType vehicleType) {
-        this.vehicleType = vehicleType;
+    public void setVisitorVehicleType(VisitorVehicleType visitorVehicleType) {
+        this.visitorVehicleType = visitorVehicleType;
     }
 
-    public LocalDateTime getEntryTime() {
-        return entryTime;
+    public LocalDateTime getVisitorEntryTime() {
+        return visitorEntryTime;
     }
 
-    public void setEntryTime(LocalDateTime entryTime) {
-        this.entryTime = entryTime;
+    public void setVisitorEntryTime(LocalDateTime visitorEntryTime) {
+        this.visitorEntryTime = visitorEntryTime;
     }
 
-    public LocalDateTime getExitTime() {
-        return exitTime;
+    public LocalDateTime getVisitorExitTime() {
+        return visitorExitTime;
     }
 
-    public void setExitTime(LocalDateTime exitTime) {
-        this.exitTime = exitTime;
+    public void setVisitorExitTime(LocalDateTime visitorExitTime) {
+        this.visitorExitTime = visitorExitTime;
     }
 
     public Flats getFlat() {
@@ -121,15 +121,15 @@ public class Visitor {
     @Override
     public String toString() {
         return "Visitor{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", purpose=" + purpose +
-                ", vehicleType=" + vehicleType +
-                ", entryTime=" + entryTime +
-                ", exitTime=" + exitTime +
-                ", flat=" + flat +
-                ", resident=" + resident +
+                "visitorId=" + visitorId +
+                ", visitorName='" + visitorName + '\'' +
+                ", visitorPhone='" + visitorPhone + '\'' +
+                ", visitPurpose=" + visitPurpose +
+                ", visitorVehicleType=" + visitorVehicleType +
+                ", visitorEntryTime=" + visitorEntryTime +
+                ", visitorExitTime=" + visitorExitTime +
+                ", flatId=" + (flat != null ? flat.getId() : null) +
+                ", residentId=" + (resident != null ? resident.getResidentId() : null) +
                 '}';
     }
 }

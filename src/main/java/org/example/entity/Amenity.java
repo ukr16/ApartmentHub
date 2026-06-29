@@ -9,83 +9,83 @@ import java.time.LocalTime;
 public class Amenity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String description;
-    private boolean isAvailable;
-    private LocalTime openingTime;
-    private LocalTime closingTime;
-    private int capacity;
+    private Long amenityId;
+    private String amenityName;
+    private String amenityDescription;
+    private boolean isAmenityAvailable;
+    private LocalTime amenityOpeningTime;
+    private LocalTime amenityClosingTime;
+    private int amenityCapacity;
     @ManyToOne
     private Apartment apartment;
 
     public Amenity() {
     }
 
-    public Amenity(String name, String description, boolean isAvailable, LocalTime openingTime, LocalTime closingTime, int capacity, Apartment apartment) {
-        this.name = name;
-        this.description = description;
-        this.isAvailable = isAvailable;
-        this.openingTime = openingTime;
-        this.closingTime = closingTime;
-        this.capacity = capacity;
+    public Amenity(String amenityName, String amenityDescription, boolean isAmenityAvailable, LocalTime amenityOpeningTime, LocalTime amenityClosingTime, int amenityCapacity, Apartment apartment) {
+        this.amenityName = amenityName;
+        this.amenityDescription = amenityDescription;
+        this.isAmenityAvailable = isAmenityAvailable;
+        this.amenityOpeningTime = amenityOpeningTime;
+        this.amenityClosingTime = amenityClosingTime;
+        this.amenityCapacity = amenityCapacity;
         this.apartment = apartment;
     }
 
-    public Long getId() {
-        return id;
+    public Long getAmenityId() {
+        return amenityId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAmenityId(Long amenityId) {
+        this.amenityId = amenityId;
     }
 
-    public String getName() {
-        return name;
+    public String getAmenityName() {
+        return amenityName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAmenityName(String amenityName) {
+        this.amenityName = amenityName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAmenityDescription() {
+        return amenityDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAmenityDescription(String amenityDescription) {
+        this.amenityDescription = amenityDescription;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
+    public boolean isAmenityAvailable() {
+        return isAmenityAvailable;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setAmenityAvailable(boolean amenityAvailable) {
+        isAmenityAvailable = amenityAvailable;
     }
 
-    public LocalTime getOpeningTime() {
-        return openingTime;
+    public LocalTime getAmenityOpeningTime() {
+        return amenityOpeningTime;
     }
 
-    public void setOpeningTime(LocalTime openingTime) {
-        this.openingTime = openingTime;
+    public void setAmenityOpeningTime(LocalTime amenityOpeningTime) {
+        this.amenityOpeningTime = amenityOpeningTime;
     }
 
-    public LocalTime getClosingTime() {
-        return closingTime;
+    public LocalTime getAmenityClosingTime() {
+        return amenityClosingTime;
     }
 
-    public void setClosingTime(LocalTime closingTime) {
-        this.closingTime = closingTime;
+    public void setAmenityClosingTime(LocalTime amenityClosingTime) {
+        this.amenityClosingTime = amenityClosingTime;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public int getAmenityCapacity() {
+        return amenityCapacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setAmenityCapacity(int amenityCapacity) {
+        this.amenityCapacity = amenityCapacity;
     }
 
     public Apartment getApartment() {
@@ -99,13 +99,13 @@ public class Amenity {
     @Override
     public String toString() {
         return "Amenity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", isAvailable=" + isAvailable +
-                ", openingTime='" + openingTime + '\'' +
-                ", closingTime='" + closingTime + '\'' +
-                ", capacity=" + capacity +
+                "amenityId=" + amenityId +
+                ", amenityName='" + amenityName + '\'' +
+                ", amenityDescription='" + amenityDescription + '\'' +
+                ", isAmenityAvailable=" + isAmenityAvailable +
+                ", amenityOpeningTime=" + amenityOpeningTime +
+                ", amenityClosingTime=" + amenityClosingTime +
+                ", amenityCapacity=" + amenityCapacity +
                 ", apartment=" + apartment +
                 '}';
     }

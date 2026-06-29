@@ -9,7 +9,7 @@ import java.util.List;
 public class Flats {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long flatId;
     private String flatNumber;
     private int floor;
     private String block;
@@ -37,11 +37,11 @@ public class Flats {
     }
 
     public Long getId() {
-        return id;
+        return flatId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long flatId) {
+        this.flatId = flatId;
     }
 
     public String getFlatNumber() {
@@ -103,7 +103,7 @@ public class Flats {
     @Override
     public String toString() {
         return "Flats{" +
-                "id=" + id +
+                "flatId=" + flatId +
                 ", flatNumber='" + flatNumber + '\'' +
                 ", floor=" + floor +
                 ", block='" + block + '\'' +

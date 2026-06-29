@@ -9,12 +9,12 @@ import java.time.LocalDateTime;
 public class Compliant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String title;
-    private String description;
+    private Long compliantId;
+    private String compliantTitle;
+    private String compliantDescription;
     @Enumerated(EnumType.STRING)
-    private Status status;
-    private LocalDateTime createdAt;
+    private Status compliantStatus;
+    private LocalDateTime compliantCreatedAt;
     @ManyToOne
     private Resident resident;
     @ManyToOne
@@ -27,53 +27,53 @@ public class Compliant {
     public Compliant() {
     }
 
-    public Compliant(String title, String description, Status status, LocalDateTime createdAt, Resident resident, Flats flats) {
-        this.title = title;
-        this.description = description;
-        this.status = status;
-        this.createdAt = createdAt;
+    public Compliant(String compliantTitle, String compliantDescription, Status compliantStatus, LocalDateTime compliantCreatedAt, Resident resident, Flats flats) {
+        this.compliantTitle = compliantTitle;
+        this.compliantDescription = compliantDescription;
+        this.compliantStatus = compliantStatus;
+        this.compliantCreatedAt = compliantCreatedAt;
         this.resident = resident;
         this.flats = flats;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCompliantId() {
+        return compliantId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCompliantId(Long compliantId) {
+        this.compliantId = compliantId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getCompliantTitle() {
+        return compliantTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setCompliantTitle(String compliantTitle) {
+        this.compliantTitle = compliantTitle;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCompliantDescription() {
+        return compliantDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCompliantDescription(String compliantDescription) {
+        this.compliantDescription = compliantDescription;
     }
 
-    public Status getStatus() {
-        return status;
+    public Status getCompliantStatus() {
+        return compliantStatus;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setCompliantStatus(Status compliantStatus) {
+        this.compliantStatus = compliantStatus;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public LocalDateTime getCompliantCreatedAt() {
+        return compliantCreatedAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setCompliantCreatedAt(LocalDateTime compliantCreatedAt) {
+        this.compliantCreatedAt = compliantCreatedAt;
     }
 
     public Resident getResident() {
@@ -95,11 +95,11 @@ public class Compliant {
     @Override
     public String toString() {
         return "Compliant{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", status=" + status +
-                ", createdAt=" + createdAt +
+                "compliantId=" + compliantId +
+                ", compliantTitle='" + compliantTitle + '\'' +
+                ", compliantDescription='" + compliantDescription + '\'' +
+                ", compliantStatus=" + compliantStatus +
+                ", compliantCreatedAt=" + compliantCreatedAt +
                 ", resident=" + resident +
                 ", flats=" + flats +
                 '}';
