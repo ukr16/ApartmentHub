@@ -9,7 +9,7 @@ import java.util.List;
 public class Parking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long parkingId;
     private String parkingNumber;
     @Enumerated(EnumType.STRING)
     private ParkingType parkingType;
@@ -29,11 +29,11 @@ public class Parking {
     }
 
     public Long getId() {
-        return id;
+        return parkingId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long parkingId) {
+        this.parkingId = parkingId;
     }
 
     public String getParkingNumber() {
@@ -63,7 +63,7 @@ public class Parking {
     @Override
     public String toString() {
         return "Parking{" +
-                "id=" + id +
+                "parkingId=" + parkingId +
                 ", parkingNumber='" + parkingNumber + '\'' +
                 ", parkingType=" + parkingType +
                 '}';

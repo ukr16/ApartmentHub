@@ -10,13 +10,13 @@ import java.util.List;
 public class Resident {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String phone;
-    private String email;
+    private Long residentId;
+    private String residentName;
+    private String residentPhone;
+    private String residentEmail;
     @Enumerated(EnumType.STRING)
     private ResidentType residentType;
-    private LocalDate moveInDate;
+    private LocalDate residentMoveInDate;
     @ManyToMany
     private List<Flats> flat;
     @ManyToMany
@@ -30,44 +30,44 @@ public class Resident {
     public Resident() {
     }
 
-    public Resident(String name, String phone, String email, ResidentType residentType, LocalDate moveInDate) {
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
+    public Resident(String residentName, String residentPhone, String residentEmail, ResidentType residentType, LocalDate residentMoveInDate) {
+        this.residentName = residentName;
+        this.residentPhone = residentPhone;
+        this.residentEmail = residentEmail;
         this.residentType = residentType;
-        this.moveInDate = moveInDate;
+        this.residentMoveInDate = residentMoveInDate;
     }
 
-    public Long getId() {
-        return id;
+    public Long getResidentId() {
+        return residentId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setResidentId(Long residentId) {
+        this.residentId = residentId;
     }
 
-    public String getName() {
-        return name;
+    public String getResidentName() {
+        return residentName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResidentName(String residentName) {
+        this.residentName = residentName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getResidentPhone() {
+        return residentPhone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setResidentPhone(String residentPhone) {
+        this.residentPhone = residentPhone;
     }
 
-    public String getEmail() {
-        return email;
+    public String getResidentEmail() {
+        return residentEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setResidentEmail(String residentEmail) {
+        this.residentEmail = residentEmail;
     }
 
     public ResidentType getResidentType() {
@@ -78,12 +78,12 @@ public class Resident {
         this.residentType = residentType;
     }
 
-    public LocalDate getMoveInDate() {
-        return moveInDate;
+    public LocalDate getResidentMoveInDate() {
+        return residentMoveInDate;
     }
 
-    public void setMoveInDate(LocalDate moveInDate) {
-        this.moveInDate = moveInDate;
+    public void setResidentMoveInDate(LocalDate residentMoveInDate) {
+        this.residentMoveInDate = residentMoveInDate;
     }
 
     public List<Flats> getFlat() {
@@ -102,17 +102,15 @@ public class Resident {
         this.parking = parking;
     }
 
-
-
     @Override
     public String toString() {
         return "Resident{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", residentType='" + residentType + '\'' +
-                ", moveInDate=" + moveInDate +
+                "residentId=" + residentId +
+                ", residentName='" + residentName + '\'' +
+                ", residentPhone='" + residentPhone + '\'' +
+                ", residentEmail='" + residentEmail + '\'' +
+                ", residentType=" + residentType +
+                ", residentMoveInDate=" + residentMoveInDate +
                 '}';
     }
 }

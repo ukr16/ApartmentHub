@@ -9,68 +9,68 @@ import java.time.LocalDate;
 public class Maintenance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private double amount;
-    private LocalDate dueDate;
-    private LocalDate paymentDate;
+    private Long maintenanceId;
+    private double maintenanceAmount;
+    private LocalDate maintenanceDueDate;
+    private LocalDate maintenancePaymentDate;
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private MaintenanceStatus maintenancePaymentStatus;
     @ManyToOne
     private Flats flat;
 
-    public enum Status{
+    public enum MaintenanceStatus{
         PAID, UNPAID, OVERDUE
     }
 
     public Maintenance() {
     }
 
-    public Maintenance(double amount, LocalDate dueDate, LocalDate paymentDate, Status status, Flats flat) {
-        this.amount = amount;
-        this.dueDate = dueDate;
-        this.paymentDate = paymentDate;
-        this.status = status;
+    public Maintenance(double maintenanceAmount, LocalDate maintenanceDueDate, LocalDate maintenancePaymentDate, MaintenanceStatus maintenancePaymentStatus, Flats flat) {
+        this.maintenanceAmount = maintenanceAmount;
+        this.maintenanceDueDate = maintenanceDueDate;
+        this.maintenancePaymentDate = maintenancePaymentDate;
+        this.maintenancePaymentStatus = maintenancePaymentStatus;
         this.flat = flat;
     }
 
-    public Long getId() {
-        return id;
+    public Long getMaintenanceId() {
+        return maintenanceId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setMaintenanceId(Long maintenanceId) {
+        this.maintenanceId = maintenanceId;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getMaintenanceAmount() {
+        return maintenanceAmount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setMaintenanceAmount(double maintenanceAmount) {
+        this.maintenanceAmount = maintenanceAmount;
     }
 
-    public LocalDate getDueDate() {
-        return dueDate;
+    public LocalDate getMaintenanceDueDate() {
+        return maintenanceDueDate;
     }
 
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
+    public void setMaintenanceDueDate(LocalDate maintenanceDueDate) {
+        this.maintenanceDueDate = maintenanceDueDate;
     }
 
-    public LocalDate getPaymentDate() {
-        return paymentDate;
+    public LocalDate getMaintenancePaymentDate() {
+        return maintenancePaymentDate;
     }
 
-    public void setPaymentDate(LocalDate paymentDate) {
-        this.paymentDate = paymentDate;
+    public void setMaintenancePaymentDate(LocalDate maintenancePaymentDate) {
+        this.maintenancePaymentDate = maintenancePaymentDate;
     }
 
-    public Status getStatus() {
-        return status;
+    public MaintenanceStatus getMaintenancePaymentStatus() {
+        return maintenancePaymentStatus;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setMaintenancePaymentStatus(MaintenanceStatus maintenancePaymentStatus) {
+        this.maintenancePaymentStatus = maintenancePaymentStatus;
     }
 
     public Flats getFlat() {
@@ -84,11 +84,11 @@ public class Maintenance {
     @Override
     public String toString() {
         return "Maintenance{" +
-                "id=" + id +
-                ", amount=" + amount +
-                ", dueDate=" + dueDate +
-                ", paymentDate=" + paymentDate +
-                ", status=" + status +
+                "maintenanceId=" + maintenanceId +
+                ", maintenanceAmount=" + maintenanceAmount +
+                ", maintenanceDueDate=" + maintenanceDueDate +
+                ", maintenancePaymentDate=" + maintenancePaymentDate +
+                ", maintenancePaymentStatus=" + maintenancePaymentStatus +
                 ", flat=" + flat +
                 '}';
     }
