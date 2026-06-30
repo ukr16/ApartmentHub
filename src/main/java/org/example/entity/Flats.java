@@ -36,11 +36,11 @@ public class Flats {
         this.apartment = apartment;
     }
 
-    public Long getId() {
+    public Long getFlatId() {
         return flatId;
     }
 
-    public void setId(Long flatId) {
+    public void setFlatId(Long flatId) {
         this.flatId = flatId;
     }
 
@@ -109,7 +109,7 @@ public class Flats {
                 ", block='" + block + '\'' +
                 ", flatStatus=" + flatStatus +
                 ", rentAmount=" + rentAmount +
-                ", apartment=" + apartment +
+                ", apartmentId=" + (apartment != null ? apartment.getApartmentId() : null) +
                 '}';
     }
 }

@@ -100,8 +100,8 @@ public class Compliant {
                 ", compliantDescription='" + compliantDescription + '\'' +
                 ", compliantStatus=" + compliantStatus +
                 ", compliantCreatedAt=" + compliantCreatedAt +
-                ", resident=" + resident +
-                ", flats=" + flats +
+                ", residentId=" + (resident != null ? resident.getResidentId() : null) +
+                ", flatId=" + (flats != null ? flats.getFlatId() : null) +
                 '}';
     }
 }

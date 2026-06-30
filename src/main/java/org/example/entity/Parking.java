@@ -28,11 +28,11 @@ public class Parking {
         this.parkingType = parkingType;
     }
 
-    public Long getId() {
+    public Long getParkingId() {
         return parkingId;
     }
 
-    public void setId(Long parkingId) {
+    public void setParkingId(Long parkingId) {
         this.parkingId = parkingId;
     }
 
