@@ -89,7 +89,7 @@ public class Maintenance {
                 ", maintenanceDueDate=" + maintenanceDueDate +
                 ", maintenancePaymentDate=" + maintenancePaymentDate +
                 ", maintenancePaymentStatus=" + maintenancePaymentStatus +
-                ", flat=" + flat +
+                ", flatId=" + (flat != null ? flat.getFlatId() : null) +
                 '}';
     }
 }

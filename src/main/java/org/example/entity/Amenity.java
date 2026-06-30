@@ -106,7 +106,7 @@ public class Amenity {
                 ", amenityOpeningTime=" + amenityOpeningTime +
                 ", amenityClosingTime=" + amenityClosingTime +
                 ", amenityCapacity=" + amenityCapacity +
-                ", apartment=" + apartment +
+                ", apartmentId=" + (apartment != null ? apartment.getApartmentId() : null) +
                 '}';
     }
 }

@@ -73,7 +73,7 @@ public class Announcement {
                 ", announcementTitle='" + announcementTitle + '\'' +
                 ", announcementMessage='" + announcementMessage + '\'' +
                 ", announcementCreatedAt=" + announcementCreatedAt +
-                ", apartment=" + apartment +
+                ", apartmentId=" + (apartment != null ? apartment.getApartmentId() : null) +
                 '}';
     }
 }
