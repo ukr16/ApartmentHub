@@ -13,21 +13,21 @@ public class Compliant {
     private String compliantTitle;
     private String compliantDescription;
     @Enumerated(EnumType.STRING)
-    private Status compliantStatus;
+    private CompliantStatus compliantStatus;
     private LocalDateTime compliantCreatedAt;
     @ManyToOne
     private Resident resident;
     @ManyToOne
     private Flats flats;
 
-    public enum Status{
+    public enum CompliantStatus{
         OPEN, IN_PROGRESS, RESOLVED
     }
 
     public Compliant() {
     }
 
-    public Compliant(String compliantTitle, String compliantDescription, Status compliantStatus, LocalDateTime compliantCreatedAt, Resident resident, Flats flats) {
+    public Compliant(String compliantTitle, String compliantDescription, CompliantStatus compliantStatus, LocalDateTime compliantCreatedAt, Resident resident, Flats flats) {
         this.compliantTitle = compliantTitle;
         this.compliantDescription = compliantDescription;
         this.compliantStatus = compliantStatus;
@@ -60,11 +60,11 @@ public class Compliant {
         this.compliantDescription = compliantDescription;
     }
 
-    public Status getCompliantStatus() {
+    public CompliantStatus getCompliantStatus() {
         return compliantStatus;
     }
 
-    public void setCompliantStatus(Status compliantStatus) {
+    public void setCompliantStatus(CompliantStatus compliantStatus) {
         this.compliantStatus = compliantStatus;
     }
 

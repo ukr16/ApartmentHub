@@ -7,8 +7,8 @@ import java.util.List;
 public interface ApartmentDAO {
     void save(Apartment apartment);
     void update(Apartment apartment);
-    void delete(Long id);
-    Apartment findById(Long id);
-    List<Apartment> findAll();
-    Apartment findByName(String name);
+    void delete(Long apartmentId);
+    Apartment findByApartmentId(Long apartmentId);
+    List<Apartment> findAllApartments();
+    Apartment findByApartmentName(String apartmentName);
 }
