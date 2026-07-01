@@ -7,10 +7,10 @@ import java.util.List;
 public interface AmenityDAO {
     void save(Amenity amenity);
     void update(Amenity amenity);
-    void delete(Long id);
-    Amenity findById(Long id);
-    Amenity findByName(String name);
-    List<Amenity> findByAvailability(boolean isAvailable);
-    List<Amenity> findAll();
-    List<Amenity> findByApartment(String apartmentName);
+    void delete(Long amenityId);
+    Amenity findByAmenityId(Long amenityId);
+    Amenity findByAmenityName(String amenityName);
+    List<Amenity> findByAmenityAvailability(boolean isAmenityAvailable);
+    List<Amenity> findAllAmenities();
+    List<Amenity> findAmenityByApartment(String apartmentName);
 }

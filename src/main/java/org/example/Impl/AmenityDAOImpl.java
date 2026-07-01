@@ -35,11 +35,11 @@ public class AmenityDAOImpl implements AmenityDAO {
         }
     }
     @Override
-    public void delete(Long id){
+    public void delete(Long amenityId){
         Transaction tx = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             tx = session.beginTransaction();
-            Amenity amenity = session.find(Amenity.class, id);
+            Amenity amenity = session.find(Amenity.class, amenityId);
             if(amenity != null) session.remove(amenity);
             tx.commit();
         }catch(Exception e){
@@ -48,34 +48,34 @@ public class AmenityDAOImpl implements AmenityDAO {
         }
     }
     @Override
-    public Amenity findById(Long id){
+    public Amenity findByAmenityId(Long amenityId){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.find(Amenity.class, id);
+            return session.find(Amenity.class, amenityId);
         }catch(Exception e){
             e.printStackTrace();
             return null;
         }
     }
     @Override
-    public Amenity findByName(String name){
+    public Amenity findByAmenityName(String amenityName){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.createQuery("from Amenity where name = :name", Amenity.class).setParameter("name", name).uniqueResult();
+            return session.createQuery("from Amenity where amenityName = :amenityName", Amenity.class).setParameter("amenityName", amenityName).uniqueResult();
         }catch(Exception e){
             e.printStackTrace();
             return null;
         }
     }
     @Override
-    public List<Amenity> findByAvailability(boolean isAvailable){
+    public List<Amenity> findByAmenityAvailability(boolean isAmenityAvailable){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.createQuery("from Amenity where isAvailable = :isAvailable", Amenity.class).setParameter("isAvailable", isAvailable).list();
+            return session.createQuery("from Amenity where isAvailable = :isAvailable", Amenity.class).setParameter("isAmenityAvailable", isAmenityAvailable).list();
         }catch(Exception e){
             e.printStackTrace();
             return null;
         }
     }
     @Override
-    public List<Amenity> findAll(){
+    public List<Amenity> findAllAmenities(){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             return session.createQuery("from Amenity", Amenity.class).list();
         }catch(Exception e){
@@ -84,7 +84,7 @@ public class AmenityDAOImpl implements AmenityDAO {
         }
     }
     @Override
-    public List<Amenity> findByApartment(String apartmentName){
+    public List<Amenity> findAmenityByApartment(String apartmentName){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             return session.createQuery("from Amenity where apartmentName = :apartmentName", Amenity.class).setParameter("apartmentName", apartmentName).list();
         }catch(Exception e){

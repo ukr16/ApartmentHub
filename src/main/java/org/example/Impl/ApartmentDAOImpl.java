@@ -38,16 +38,15 @@ public class ApartmentDAOImpl implements ApartmentDAO {
     }
 
     @Override
-    public void delete(Long id){
+    public void delete(Long apartmentId){
         Transaction tx = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             tx = session.beginTransaction();
-            Apartment apartment = session.find(Apartment.class, id);
+            Apartment apartment = session.find(Apartment.class, apartmentId);
             if (apartment != null) {
                 session.remove(apartment);
             }
             tx.commit();
-            session.close();
         }catch(Exception e){
             if(tx != null) tx.rollback();
             e.printStackTrace();
@@ -55,23 +54,23 @@ public class ApartmentDAOImpl implements ApartmentDAO {
     }
 
     @Override
-    public Apartment findById(Long id){
+    public Apartment findByApartmentId(Long apartmentId){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.find(Apartment.class, id);
+            return session.find(Apartment.class, apartmentId);
         }
     }
 
     @Override
-    public List<Apartment> findAll(){
+    public List<Apartment> findAllApartments(){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             return session.createQuery("from Apartment", Apartment.class).list();
         }
     }
 
     @Override
-    public Apartment findByName(String name){
+    public Apartment findByApartmentName(String apartmentName){
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.createQuery("from Apartment where name = :name", Apartment.class).setParameter("name", name).uniqueResult();
+            return session.createQuery("from Apartment where apartmentName = :apartmentName", Apartment.class).setParameter("apartmentName", apartmentName).uniqueResult();
         }
     }
 }

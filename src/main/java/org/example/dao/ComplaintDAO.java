@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface ComplaintDAO {
     void save(Compliant compliant);
-    Compliant findById(Long id);
-    List<Compliant> findAll();
+    Compliant findByCompliantId(Long compliantId);
+    List<Compliant> findAllCompliants();
     void update(Compliant compliant);
-    void delete(Long id);
-    List<Compliant> findByTitle(String title);
-    List<Compliant> findByStatus(Compliant.Status status);
+    void delete(Long compliantId);
+    List<Compliant> findByCompliantTitle(String compliantTitle);
+    List<Compliant> findByCompliantStatus(Compliant.CompliantStatus compliantStatus);
     List<Compliant> findByResident(Long residentId);
-    List<Compliant> findByFlat(Long Id);
-    List<Compliant> findByCreatedAt(LocalDateTime createdAt);
+    List<Compliant> findByFlat(Long flatId);
+    List<Compliant> findByCompliantCreatedAt(LocalDateTime compliantCreatedAt);
 }
